@@ -1,117 +1,175 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Para o Meu Amor, Iza</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            background: linear-gradient(135deg, #ffe5ec, #ffb3c6);
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: #4a0e17;
-            text-align: center;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        .container {
-            background: rgba(255, 255, 255, 0.85);
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            max-width: 500px;
-            width: 90%;
-            backdrop-filter: blur(10px);
-        }
+<title>❤️ Para Iza ❤️</title>
 
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            color: #ff4d6d;
-        }
+<link rel="stylesheet" href="style.css">
 
-        p {
-            font-size: 1.2rem;
-            line-height: 1.6;
-            margin-bottom: 30px;
-        }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&family=Great+Vibes&display=swap" rel="stylesheet">
 
-        .heart {
-            font-size: 50px;
-            color: #ff4d6d;
-            animation: pulse 1.5s infinite;
-        }
-
-        .music-control {
-            background-color: #ff4d6d;
-            color: white;
-            border: none;
-            padding: 12px 24px;
-            font-size: 1rem;
-            border-radius: 25px;
-            cursor: pointer;
-            transition: background 0.3s ease;
-            box-shadow: 0 4px 15px rgba(255, 77, 109, 0.3);
-        }
-
-        .music-control:hover {
-            background-color: #ff758f;
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.15); }
-            100% { transform: scale(1); }
-        }
-    </style>
 </head>
+
 <body>
 
-    <div class="container">
-        <div class="heart">❤️</div>
-        <h1>Para a Iza</h1>
-        <p>
-            Iza, este espaço foi criado apenas para lembrar o quanto você é especial. 
-            O meu amor por você não tem tamanho, e cada detalhe seu torna o mundo muito melhor. 
-            Você é a minha pessoa favorita!
-        </p>
-        
-        <button class="music-control" id="playBtn" onclick="togglePlay()">Tocar Caso Indefinido 🎵</button>
-    </div>
+<div id="hearts"></div>
 
-    <audio id="bgMusic" loop>
-        <source src="caso-indefinido.mp3" type="audio/mpeg">
-        Seu navegador não suporta o elemento de áudio.
-    </audio>
+<header>
 
-    <script>
-        const music = document.getElementById('bgMusic');
-        const btn = document.getElementById('playBtn');
+<h1>❤️ Para a mulher da minha vida ❤️</h1>
 
-        function togglePlay() {
-            if (music.paused) {
-                music.play().then(() => {
-                    btn.innerText = "Pausar Música ⏸️";
-                }).catch(error => {
-                    console.log("Erro ao tocar a música:", error);
-                });
-            } else {
-                music.pause();
-                btn.innerText = "Tocar Caso Indefinido 🎵";
-            }
-        }
+<h2>Iza</h2>
 
-        // Tenta tocar automaticamente se o usuário interagir com qualquer parte da tela
-        window.addEventListener('click', () => {
-            if (music.paused) {
-                togglePlay();
-            }
-        }, { once: true });
-    </script>
+<p>
+Desde o dia em que você entrou na minha vida,
+meu mundo ficou muito mais bonito.
+</p>
+
+<button id="start">
+💖 Abrir minha declaração
+</button>
+
+</header>
+
+<section id="love">
+
+<h1>Minha Carta Para Você</h1>
+
+<p>
+
+Iza...
+
+Existem bilhões de pessoas no mundo...
+
+Mas nenhuma delas consegue ocupar o lugar que você ocupa no meu coração.
+
+Você é meu sorriso favorito.
+
+Meu abraço favorito.
+
+Meu pensamento favorito.
+
+Meu sonho mais bonito.
+
+Meu futuro.
+
+Meu porto seguro.
+
+Meu amor.
+
+Cada segundo ao seu lado faz minha vida valer a pena.
+
+Se eu pudesse escolher novamente...
+
+Escolheria você mil vezes.
+
+E outras mil.
+
+E mais mil.
+
+Porque amar você foi a melhor decisão da minha vida.
+
+Você é exatamente tudo aquilo que sempre pedi para Deus.
+
+Eu prometo cuidar de você.
+
+Te apoiar.
+
+Te fazer sorrir.
+
+Estar ao seu lado nos momentos bons e ruins.
+
+E nunca deixar você esquecer o quanto é especial.
+
+Você é o amor da minha vida.
+
+❤️
+
+</p>
+
+</section>
+
+<section>
+
+<h1>Nosso Amor</h1>
+
+<div id="contador">
+
+<h2>Eu te amo há</h2>
+
+<div id="tempo"></div>
+
+</div>
+
+</section>
+
+<section>
+
+<h1>Galeria</h1>
+
+<div class="galeria">
+
+<img src="img/foto1.jpg">
+
+<img src="img/foto2.jpg">
+
+<img src="img/foto3.jpg">
+
+<img src="img/foto4.jpg">
+
+<img src="img/foto5.jpg">
+
+<img src="img/foto6.jpg">
+
+</div>
+
+</section>
+
+<section>
+
+<h1>Nossa Música</h1>
+
+<audio id="musica" controls>
+
+<source src="music/musica.mp3" type="audio/mpeg">
+
+</audio>
+
+</section>
+
+<section>
+
+<button id="fire">
+
+❤️ Clique Aqui ❤️
+
+</button>
+
+</section>
+
+<footer>
+
+<h2>
+
+Feito com todo meu amor para você ❤️
+
+</h2>
+
+<p>
+
+"Enquanto existir um amanhã...
+
+continuarei escolhendo você."
+
+</p>
+
+</footer>
+
+<script src="script.js"></script>
 
 </body>
+
 </html>
