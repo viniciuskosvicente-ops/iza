@@ -3,145 +3,114 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Para Minha Iza ❤️</title>
+    <title>Para o Meu Amor, Iza</title>
     <style>
-        * {
+        body {
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        body {
-            background: linear-gradient(135deg, #ffe5ec, #ffc2d1);
-            color: #4a5568;
             display: flex;
-            flex-direction: column;
+            justify-content: center;
             align-items: center;
             min-height: 100vh;
-            padding: 20px;
-        }
-
-        header {
+            background: linear-gradient(135deg, #ffe5ec, #ffb3c6);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #4a0e17;
             text-align: center;
-            margin: 40px 0;
-        }
-
-        h1 {
-            color: #ff477e;
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-            animation: pulse 2s infinite;
-        }
-
-        .subtitle {
-            font-size: 1.2rem;
-            color: #708090;
-            font-style: italic;
         }
 
         .container {
-            background: white;
-            padding: 30px;
+            background: rgba(255, 255, 255, 0.85);
+            padding: 40px;
             border-radius: 20px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-            max-width: 600px;
-            width: 100%;
-            text-align: center;
-            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            width: 90%;
+            backdrop-filter: blur(10px);
         }
 
-        .main-text {
-            font-size: 1.1rem;
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #ff4d6d;
+        }
+
+        p {
+            font-size: 1.2rem;
             line-height: 1.6;
-            margin-bottom: 25px;
+            margin-bottom: 30px;
         }
 
         .heart {
             font-size: 50px;
-            color: #ff477e;
-            margin: 20px 0;
+            color: #ff4d6d;
+            animation: pulse 1.5s infinite;
+        }
+
+        .music-control {
+            background-color: #ff4d6d;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 1rem;
+            border-radius: 25px;
             cursor: pointer;
-            transition: transform 0.3s;
+            transition: background 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 77, 109, 0.3);
         }
 
-        .heart:hover {
-            transform: scale(1.2);
-        }
-
-        .reasons-list {
-            text-align: left;
-            list-style: none;
-            margin-top: 20px;
-        }
-
-        .reasons-list li {
-            padding: 10px 0;
-            border-bottom: 1px solid #f0f0f0;
-            display: flex;
-            align-items: center;
-        }
-
-        .reasons-list li::before {
-            content: "✨";
-            margin-right: 10px;
-        }
-
-        footer {
-            margin-top: auto;
-            font-size: 0.9rem;
-            color: #9bafc6;
+        .music-control:hover {
+            background-color: #ff758f;
         }
 
         @keyframes pulse {
             0% { transform: scale(1); }
-            50% { transform: scale(1.03); }
+            50% { transform: scale(1.15); }
             100% { transform: scale(1); }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>O Quanto Eu Amo a Iza</h1>
-        <p class="subtitle">Um site dedicado inteiramente a você</p>
-    </header>
-
     <div class="container">
-        <div class="heart" onclick="contarAmor()">❤️</div>
-        
-        <p class="main-text">
-            Iza, fiz este cantinho na internet para deixar registrado o tamanho do meu carinho por você. 
-            Você é uma pessoa incrível e merece todas as demonstrações de afeto do mundo!
+        <div class="heart">❤️</div>
+        <h1>Para a Iza</h1>
+        <p>
+            Iza, este espaço foi criado apenas para lembrar o quanto você é especial. 
+            O meu amor por você não tem tamanho, e cada detalhe seu torna o mundo muito melhor. 
+            Você é a minha pessoa favorita!
         </p>
-
-        <h3>Alguns dos muitos motivos:</h3>
-        <ul class="reasons-list">
-            <li>O seu sorriso que ilumina qualquer dia.</li>
-            <li>A sua forma única de ver o mundo.</li>
-            <li>O quanto você é companheira e especial.</li>
-            <li>Apenas por ser exatamente quem você é.</li>
-        </ul>
-
-        <div style="margin-top: 30px;">
-            <p id="contador-texto">Você já clicou no coração acima para espalhar amor!</p>
-            <strong id="cliques" style="font-size: 1.5rem; color: #ff477e;">0</strong> de vezes.
-        </div>
+        
+        <button class="music-control" id="playBtn" onclick="togglePlay()">Tocar Caso Indefinido 🎵</button>
     </div>
 
-    <footer>
-        Feito com ❤️ e código.
-    </footer>
+    <audio id="bgMusic" loop>
+        <source src="caso-indefinido.mp3" type="audio/mpeg">
+        Seu navegador não suporta o elemento de áudio.
+    </audio>
 
     <script>
-        let contador = 0;
-        function contarAmor() {
-            contador++;
-            document.getElementById('cliques').innerText = contador;
-            if(contador === 10) {
-                alert("Isso é que é amar! Você já clicou 10 vezes! 🥰");
+        const music = document.getElementById('bgMusic');
+        const btn = document.getElementById('playBtn');
+
+        function togglePlay() {
+            if (music.paused) {
+                music.play().then(() => {
+                    btn.innerText = "Pausar Música ⏸️";
+                }).catch(error => {
+                    console.log("Erro ao tocar a música:", error);
+                });
+            } else {
+                music.pause();
+                btn.innerText = "Tocar Caso Indefinido 🎵";
             }
         }
+
+        // Tenta tocar automaticamente se o usuário interagir com qualquer parte da tela
+        window.addEventListener('click', () => {
+            if (music.paused) {
+                togglePlay();
+            }
+        }, { once: true });
     </script>
 
 </body>
